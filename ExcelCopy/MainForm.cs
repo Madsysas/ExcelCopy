@@ -122,7 +122,9 @@ namespace ExcelCopy
                 do
                 {
                     string curItem = Failu_sarasas_lb.Items[i].ToString();
-                    System.IO.File.Copy(DirectoryPath + @"\" + curItem, DirectoryPath + @"\W " + k + curItem, true);
+                    var backslash_W = @"\W";
+                    string tikslas = $"{DirectoryPath}{backslash_W}{k} {curItem}";
+                    System.IO.File.Copy(DirectoryPath + @"\" + curItem, tikslas, true);
                     k++;
                 } while (k < l + 1);
             }
@@ -137,11 +139,10 @@ namespace ExcelCopy
         private void Savaite()
         {
             DateTime currentDateTime = DateTime.Now;
-            Calendar cal = new CultureInfo("en-US").Calendar;
+            Calendar cal = new CultureInfo("en-EU").Calendar;
             int week = cal.GetWeekOfYear(currentDateTime, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
             Nuo_sav_textbox.Text = week.ToString();
-            int i = week + 1;
-            Iki_sav_textbox.Text = i.ToString();
+            Iki_sav_textbox.Text = (week + 1).ToString();
         }
     }
 }
