@@ -9,7 +9,7 @@ namespace ExcelCopy
     {
         string File_name;
         string DirectoryPath;
-        List<string> Failu_pavadinimai = new List<string>();
+        public HashSet<string> Failu_pavadinimai = new HashSet<string>();
 
         public MainForm()
         {
@@ -63,19 +63,8 @@ namespace ExcelCopy
             DirectoryPath = "";
             Failu_pavadinimai.Clear();
             Copy_button.Enabled = false;
+            Delete_selection_btn.Enabled = false;
         }
-/*        private void Input_listbox_check()
-        {
-            //konvertuojam textboxu inputis i int
-            var x = int.Parse(Nuo_sav_textbox.Text);
-            var y = int.Parse(Iki_sav_textbox.Text);
-            if (x > y)
-            {
-                MessageBox.Show("Pražios savaitė didesnė už pabaigos", "Klaida!");
-            }
-            else
-                return;
-        }*/
         private void Surinkimas()
         {
             OpenFileDialog opendialog = new OpenFileDialog();
@@ -94,19 +83,21 @@ namespace ExcelCopy
             else
                 if (opendialog.ShowDialog() == DialogResult.OK)
             {
-                int i = 0;
                 DirectoryPath = System.IO.Path.GetDirectoryName(opendialog.FileName);
 
                 foreach (String file in opendialog.FileNames)
                 {
-                    //if (!Failu_pavadinimai.Contains(file)) //TODO patikrinti ar jau toks failas yra
-
                     File_name = System.IO.Path.GetFileName(file);
                     Failu_pavadinimai.Add(File_name);
-                    i++;
                 }
-                Failu_sarasas_lb.Items.AddRange(Failu_pavadinimai.ToArray());
+                foreach (string p in Failu_pavadinimai)
+                {
+                    if (!Failu_sarasas_lb.Items.Contains(p))
+                        Failu_sarasas_lb.Items.Add(p);
+
+                }
                 Copy_button.Enabled = true;
+                Delete_selection_btn.Enabled = true;
             }
             else
             {
@@ -135,6 +126,8 @@ namespace ExcelCopy
         {
             Failu_sarasas_lb.Items.RemoveAt(Failu_sarasas_lb.SelectedIndex);
             Failu_pavadinimai.Remove(Failu_sarasas_lb.GetItemText(Failu_sarasas_lb.SelectedItem));
+            if (Failu_sarasas_lb.Items.Count == 0)
+                Delete_selection_btn.Enabled = false;
         }
         private void Savaite()
         {

@@ -80,6 +80,7 @@
             this.Failu_sarasas_lb.Name = "Failu_sarasas_lb";
             this.Failu_sarasas_lb.Size = new System.Drawing.Size(484, 355);
             this.Failu_sarasas_lb.TabIndex = 7;
+            this.Failu_sarasas_lb.Sorted = true;
             // 
             // Copy_button
             // 
