@@ -55,7 +55,16 @@ namespace ExcelCopy
             Copy_button.Enabled = false;
             Savaite();
         }
-
+        private void Isvalyti()
+        {
+            Failu_sarasas_lb.Items.Clear();
+            File_name = "";
+            DirectoryPath = "";
+            Failu_pavadinimai.Clear();
+            Copy_button.Enabled = false;
+            Listbox_clear_btn.Enabled = false;
+            Delete_selection_btn.Enabled = false;
+        }
         private void Listbox_clear_Click(object sender, EventArgs e)
         {
             Failu_sarasas_lb.Items.Clear();
@@ -94,7 +103,6 @@ namespace ExcelCopy
                 {
                     if (!Failu_sarasas_lb.Items.Contains(p))
                         Failu_sarasas_lb.Items.Add(p);
-
                 }
                 Copy_button.Enabled = true;
                 Delete_selection_btn.Enabled = true;
@@ -119,7 +127,8 @@ namespace ExcelCopy
                     k++;
                 } while (k < l + 1);
             }
-            Copy_button.Enabled = true;
+            MessageBox.Show("BAIGTA! failai nukopijuoti: " + DirectoryPath, "");
+            Isvalyti();
         }
 
         private void Delete_selection_btn_Click(object sender, EventArgs e)

@@ -71,16 +71,18 @@
             // Failu_sarasas_lb
             // 
             this.Failu_sarasas_lb.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Failu_sarasas_lb.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Failu_sarasas_lb.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Failu_sarasas_lb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Failu_sarasas_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Failu_sarasas_lb.FormattingEnabled = true;
             this.Failu_sarasas_lb.ItemHeight = 20;
             this.Failu_sarasas_lb.Location = new System.Drawing.Point(0, 0);
             this.Failu_sarasas_lb.Name = "Failu_sarasas_lb";
-            this.Failu_sarasas_lb.Size = new System.Drawing.Size(484, 355);
-            this.Failu_sarasas_lb.TabIndex = 7;
+            this.Failu_sarasas_lb.Size = new System.Drawing.Size(484, 344);
             this.Failu_sarasas_lb.Sorted = true;
+            this.Failu_sarasas_lb.TabIndex = 7;
             // 
             // Copy_button
             // 
@@ -165,6 +167,7 @@
             // 
             // Nuo_sav_textbox
             // 
+            this.Nuo_sav_textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Nuo_sav_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nuo_sav_textbox.Location = new System.Drawing.Point(242, 71);
             this.Nuo_sav_textbox.Margin = new System.Windows.Forms.Padding(0);
@@ -178,6 +181,7 @@
             // Iki_sav_textbox
             // 
             this.Iki_sav_textbox.AccessibleName = "";
+            this.Iki_sav_textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Iki_sav_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Iki_sav_textbox.Location = new System.Drawing.Point(242, 120);
             this.Iki_sav_textbox.Margin = new System.Windows.Forms.Padding(0);
@@ -190,6 +194,7 @@
             // 
             // Nuo_sav_label
             // 
+            this.Nuo_sav_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Nuo_sav_label.AutoSize = true;
             this.Nuo_sav_label.Location = new System.Drawing.Point(44, 81);
             this.Nuo_sav_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -201,6 +206,7 @@
             // 
             // Iki_sav_label
             // 
+            this.Iki_sav_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Iki_sav_label.AutoSize = true;
             this.Iki_sav_label.Location = new System.Drawing.Point(39, 130);
             this.Iki_sav_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
